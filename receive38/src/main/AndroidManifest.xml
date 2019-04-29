@@ -27,9 +27,13 @@
             android:exported="true">
 
             <!-- hand-coded intent filter, using sending app's Intent.setAction parameter -->
-            <intent-filter>
-                <action android:name="com.example.sendbroadcast37" />
-            </intent-filter>
+            <!-- intent filter here does not seem to be working; done in intentFilter.addAction instead -->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.example.sendbroadcast37" />-->
+                <!-- below from https://developer.android.com/guide/components/broadcasts#java 20-4-19 -->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED"/> -->
+            <!--</intent-filter>-->
         </receiver>
     </application>
 
