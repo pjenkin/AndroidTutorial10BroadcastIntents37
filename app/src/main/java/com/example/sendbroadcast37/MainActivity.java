@@ -1,5 +1,6 @@
 package com.example.sendbroadcast37;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void sendOutBroadcast(View view)
+    {
+        Intent i = new Intent();        // NB no target of Intent instance specified (ie broadcast)
+        i.setAction("com.example.sendbroadcast37");       // broadcast to this package ie to this app
+        i.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);   // for back-compatibility
+        sendBroadcast(i);                       // transmit broadcast (cf receiver)
     }
 
     @Override
