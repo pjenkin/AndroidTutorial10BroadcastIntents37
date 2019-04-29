@@ -12,7 +12,12 @@
         <receiver
             android:name=".ReceiveBroadcast"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true">
+            <!-- hand-coded intent filter, using sending app's Intent.setAction parameter -->
+            <intent-filter>
+                <action android:name="com.example.sendbroadcast37"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
