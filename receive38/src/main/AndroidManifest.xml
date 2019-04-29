@@ -9,13 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!-- intent filter below added by hand to make entry/launch point https://stackoverflow.com/a/6467817/11365317 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+    </activity>
+
         <receiver
             android:name=".ReceiveBroadcast"
             android:enabled="true"
             android:exported="true">
+
             <!-- hand-coded intent filter, using sending app's Intent.setAction parameter -->
             <intent-filter>
-                <action android:name="com.example.sendbroadcast37"></action>
+                <action android:name="com.example.sendbroadcast37" />
             </intent-filter>
         </receiver>
     </application>
