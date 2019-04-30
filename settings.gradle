@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':receive38'
+// added module was not appearing, so I appended its entry manually  https://stackoverflow.com/a/51054455/11365317
